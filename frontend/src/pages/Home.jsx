@@ -2,12 +2,14 @@ import { Waves } from 'lucide-react'
 import PageShell from '../components/layout/PageShell'
 import Hero from '../components/landing/Hero'
 import HowItWorks from '../components/landing/HowItWorks'
+import PlatformOverview from '../components/common/PlatformOverview'
 import Card from '../components/ui/Card'
 
 export default function Home() {
   return (
     <PageShell>
       <Hero />
+      <PlatformOverview />
       <HowItWorks />
 
       <Card className="mt-12 border-l-4 border-l-coral">

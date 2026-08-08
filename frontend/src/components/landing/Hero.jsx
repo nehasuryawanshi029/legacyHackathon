@@ -31,14 +31,19 @@ export default function Hero() {
           The Keeper&apos;s Tide-Chart
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-foam sm:text-lg">
-          Where sunken halls meet sunlight — map your subjects, weak currents, and deadlines
-          into a daily chart. Always know what to study next, and why.
+          Map subjects, weak currents, and deadlines into a daily chart — then test your
+          knowledge with quizzes and sharpen your resume for the journey ahead.
         </p>
-        <div className="mt-8">
+        <div className="mt-8 flex flex-wrap gap-3">
           <Link to="/create">
             <Button size="lg">
               Create My Study Plan
               <ArrowRight className="h-5 w-5" />
+            </Button>
+          </Link>
+          <Link to="/quiz">
+            <Button size="lg" variant="secondary">
+              Take a Quiz
             </Button>
           </Link>
         </div>

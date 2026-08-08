@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { CalendarDays, Waves } from 'lucide-react'
 import PageShell from '../components/layout/PageShell'
+import PlatformOverview from '../components/common/PlatformOverview'
 import ProgressBar from '../components/dashboard/ProgressBar'
 import ReplanControls from '../components/dashboard/ReplanControls'
 import StudyPlan from '../components/dashboard/StudyPlan'
@@ -55,6 +56,10 @@ export default function Dashboard() {
           Study Dashboard
         </h1>
         <p className="mt-1 text-sm text-foam/90">{today}</p>
+      </div>
+
+      <div className="mb-6">
+        <PlatformOverview compact />
       </div>
 
       <div className="mb-6">
