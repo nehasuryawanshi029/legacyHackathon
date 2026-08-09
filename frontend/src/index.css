@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  --color-abyss: #051c2c;
+  --color-depth: #0d2838;
+  --color-deep: #0a3d4a;
+  --color-atlantic: #145a66;
+  --color-tide: #2a9aa8;
+  --color-surface: #78d5d7;
+  --color-seafoam: #9de5e8;
+  --color-foam: #c5eef2;
+  --color-pearl: #f5fcff;
+  --color-sand: #d4b896;
+  --color-coral: #e07a6a;
+  --color-reef: #f0a8a0;
+  --color-gold: #f4c542;
+  --color-priority-high: #d4656a;
+  --color-priority-medium: #e5a832;
+  --color-priority-low: #3db89a;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "DM Sans", system-ui, sans-serif;
+  background-color: var(--color-abyss);
+  color: var(--color-pearl);
+}
+
+.font-display {
+  font-family: "Cinzel", Georgia, serif;
+}
+
+/* Full-page ruins + depth gradient (surface light → abyss dark) */
+.atlantis-bg {
+  background-image: url("/images/atlantis-bg.png");
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.atlantis-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 45% at 50% 0%, rgba(255, 255, 255, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 30% at 30% 5%, rgba(120, 213, 215, 0.35) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 25% at 70% 8%, rgba(120, 213, 215, 0.2) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.atlantis-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 28, 44, 0.25) 0%,
+    rgba(5, 28, 44, 0.5) 40%,
+    rgba(5, 28, 44, 0.82) 85%,
+    rgba(5, 28, 44, 0.92) 100%
+  );
+  pointer-events: none;
+}
+
+.atlantis-nav {
+  background: linear-gradient(
+    180deg,
+    rgba(5, 28, 44, 0.92) 0%,
+    rgba(13, 40, 56, 0.88) 100%
+  );
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(120, 213, 215, 0.25);
+  box-shadow: 0 4px 24px rgba(5, 28, 44, 0.5);
+}
+
+.atlantic-surface {
+  background: linear-gradient(
+    135deg,
+    rgba(5, 28, 44, 0.88) 0%,
+    rgba(10, 61, 74, 0.82) 50%,
+    rgba(20, 90, 102, 0.78) 100%
+  );
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(120, 213, 215, 0.2);
+}
+
+.atlantic-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-tide) 0%,
+    var(--color-surface) 40%,
+    var(--color-gold) 100%
+  );
+}
+
+/* Glass panels — readable on underwater bg */
+.atlantic-card {
+  background: linear-gradient(
+    145deg,
+    rgba(245, 252, 255, 0.94) 0%,
+    rgba(197, 238, 242, 0.88) 100%
+  );
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(120, 213, 215, 0.45);
+  box-shadow:
+    0 8px 32px rgba(5, 28, 44, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.btn-atlantis-cta {
+  background: linear-gradient(135deg, var(--color-coral) 0%, var(--color-gold) 100%);
+  color: var(--color-abyss);
+  font-weight: 600;
+  box-shadow:
+    0 4px 20px rgba(224, 122, 106, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+}
+
+.btn-atlantis-cta:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 6px 28px rgba(244, 197, 66, 0.4);
+}
+
+.page-heading {
+  color: var(--color-pearl);
+  text-shadow: 0 2px 16px rgba(5, 28, 44, 0.8);
+}
+
+.page-subtext {
+  color: rgba(197, 238, 242, 0.95);
+  text-shadow: 0 1px 10px rgba(5, 28, 44, 0.6);
+}
+
+.pill-atlantis-active {
+  border: 1px solid rgba(244, 197, 66, 0.65);
+  background: linear-gradient(135deg, rgba(244, 197, 66, 0.28) 0%, rgba(120, 213, 215, 0.22) 100%);
+  color: var(--color-abyss);
+  box-shadow: 0 0 0 1px rgba(244, 197, 66, 0.25);
+}
+
+.pill-atlantis {
+  border: 1px solid rgba(120, 213, 215, 0.35);
+  background: rgba(245, 252, 255, 0.75);
+  color: var(--color-deep);
+}
+
+.pill-atlantis:hover {
+  border-color: rgba(224, 122, 106, 0.5);
+}
