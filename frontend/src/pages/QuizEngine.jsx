@@ -15,6 +15,12 @@ export default function QuizEngine() {
   const activeTopic = topics.find((t) => t.id === selectedTopicId) || topics[0]
 
   useEffect(() => {
+    if (topics.length > 0 && (!selectedTopicId || !topics.find(t => t.id === selectedTopicId))) {
+      setSelectedTopicId(topics[0].id)
+    }
+  }, [topics, selectedTopicId])
+
+  useEffect(() => {
     async function loadQuestions() {
       if (!selectedTopicId) return
       setResult(null)

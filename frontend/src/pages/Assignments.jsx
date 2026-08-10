@@ -53,7 +53,7 @@ export default function Assignments() {
         {assignments.map((asg) => (
           <div
             key={asg.id}
-            className={`p-6 rounded-2xl border transition-all space-y-4 ${
+            className={`p-6 rounded-2xl border transition-all space-y-4 hover-card-trigger ${
               asg.risk_level === 'HIGH'
                 ? 'bg-slate-900/90 border-rose-500/40 shadow-xl shadow-rose-950/20'
                 : 'bg-slate-900/70 border-teal-500/20'

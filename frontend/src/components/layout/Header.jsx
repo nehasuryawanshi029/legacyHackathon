@@ -3,12 +3,19 @@ import { Bell, RefreshCw, User, Sparkles, Menu } from 'lucide-react'
 import { useAtlantis } from '../../context/AtlantisContext'
 
 export default function Header() {
-  const { profile, recalibrateTideChart, lastSync, refreshAllState } = useAtlantis()
+  const { profile, recalibrateTideChart, lastSync, refreshAllState, mobileMenuOpen, setMobileMenuOpen } = useAtlantis()
 
   return (
-    <header className="h-16 bg-slate-950/80 border-b border-teal-500/20 px-6 flex items-center justify-between sticky top-0 z-20 backdrop-blur-md">
+    <header className="h-16 bg-slate-950/80 border-b border-teal-500/20 px-4 md:px-6 flex items-center justify-between sticky top-0 z-20 backdrop-blur-md">
       <div className="flex items-center gap-3">
-        <span className="md:hidden text-cyan-400 font-bold text-lg">ATLANTIS</span>
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-slate-100"
+          aria-label="Toggle Navigation Drawer"
+        >
+          <Menu className="h-5 w-5" />
+        </button>
+        <span className="md:hidden text-cyan-400 font-bold text-lg tracking-wider">ATLANTIS</span>
         <div className="hidden md:flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-cyan-400" />
           <span className="text-xs text-slate-300 font-medium">
