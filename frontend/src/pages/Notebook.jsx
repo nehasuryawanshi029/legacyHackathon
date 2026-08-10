@@ -60,7 +60,7 @@ export default function Notebook() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* UPLOAD & PARSE NOTES */}
-        <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 space-y-4 shadow-xl">
+        <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 space-y-4 shadow-xl hover-card-trigger">
           <div className="flex items-center gap-2 text-sm font-bold text-slate-100">
             <Upload className="h-4 w-4 text-cyan-400" />
             <span>Upload / Paste Study Material</span>
@@ -115,7 +115,7 @@ export default function Notebook() {
         </div>
 
         {/* GROUNDED DOCUMENT QA */}
-        <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 space-y-4 shadow-xl flex flex-col justify-between">
+        <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 space-y-4 shadow-xl flex flex-col justify-between hover-card-trigger">
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-sm font-bold text-slate-100">
               <Sparkles className="h-4 w-4 text-cyan-400" />
@@ -153,7 +153,7 @@ export default function Notebook() {
       </div>
 
       {/* SPACED REPETITION FLASHCARDS SECTION */}
-      <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 space-y-4 shadow-xl">
+      <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 space-y-4 shadow-xl hover-card-trigger">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Layers className="h-5 w-5 text-cyan-400" />
@@ -164,7 +164,7 @@ export default function Notebook() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {flashcards.map((card) => (
-            <div key={card.id} className="p-4 rounded-xl bg-slate-950 border border-teal-500/20 space-y-3 flex flex-col justify-between">
+            <div key={card.id} className="p-4 rounded-xl bg-slate-950 border border-teal-500/20 space-y-3 flex flex-col justify-between hover-card-trigger">
               <div>
                 <span className="text-[10px] font-mono font-bold text-cyan-400 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-500/30">
                   {card.topic_name}

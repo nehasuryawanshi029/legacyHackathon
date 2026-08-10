@@ -22,6 +22,7 @@ export function AtlantisProvider({ children }) {
 
   const [loading, setLoading] = useState(true)
   const [lastSync, setLastSync] = useState(Date.now())
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const refreshAllState = useCallback(async () => {
     try {
@@ -115,6 +116,8 @@ export function AtlantisProvider({ children }) {
         learningGaps,
         loading,
         lastSync,
+        mobileMenuOpen,
+        setMobileMenuOpen,
         refreshAllState,
         recalibrateTideChart,
         toggleSessionComplete,

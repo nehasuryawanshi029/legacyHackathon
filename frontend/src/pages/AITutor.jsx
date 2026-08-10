@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { MessageSquare, Send, Sparkles, AlertTriangle, BookOpen, CheckCircle, ArrowRight } from 'lucide-react'
 import { useAtlantis } from '../context/AtlantisContext'
 import { api } from '../api/client'
@@ -20,6 +20,17 @@ export default function AITutor() {
     }
   ])
   const [loading, setLoading] = useState(false)
+  const messagesEndRef = useRef(null)
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [messages, loading])
+
+  useEffect(() => {
+    if (topics.length > 0 && (!selectedTopic || !topics.find(t => t.name === selectedTopic))) {
+      setSelectedTopic(topics[0].name)
+    }
+  }, [topics, selectedTopic])
 
   const modes = ['Beginner', 'Simple', 'Detailed', 'Exam-oriented', 'Technical', 'Analogy-based']
 
@@ -150,6 +161,7 @@ export default function AITutor() {
             <span>AI Tutor is reasoning & tailoring explanation...</span>
           </div>
         )}
+        <div ref={messagesEndRef} />
       </div>
 
       {/* Input bar */}

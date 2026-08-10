@@ -20,7 +20,7 @@ export default function Progress() {
 
       {/* READINESS SCORE BREAKDOWN */}
       {readiness && (
-        <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 space-y-6 shadow-xl">
+        <div className="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/20 space-y-6 shadow-xl hover-card-trigger">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="h-32 w-32 rounded-full bg-gradient-to-tr from-cyan-500/20 via-teal-500/10 to-blue-500/20 border-4 border-cyan-400 shadow-xl flex items-center justify-center shrink-0">
               <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 to-teal-300">
@@ -64,7 +64,7 @@ export default function Progress() {
 
       {/* LEARNING GAP DETECTOR */}
       {learningGaps.length > 0 && (
-        <div className="p-6 rounded-2xl bg-slate-900/80 border border-rose-500/30 space-y-4 shadow-xl">
+        <div className="p-6 rounded-2xl bg-slate-900/80 border border-rose-500/30 space-y-4 shadow-xl hover-card-trigger">
           <div className="flex items-center gap-2 text-rose-400 font-bold text-sm">
             <ShieldAlert className="h-5 w-5" />
             <span>Root Learning Gap Analysis (Prerequisite Diagnosis)</span>
@@ -102,7 +102,7 @@ export default function Progress() {
         <h3 className="text-lg font-bold text-slate-100">Subject Mastery & Heatmap</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {subjects.map((subj) => (
-            <div key={subj.id} className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+            <div key={subj.id} className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2 hover-card-trigger">
               <div className="flex justify-between text-xs font-bold">
                 <span className="text-slate-200">{subj.name}</span>
                 <span className="text-cyan-300 font-mono">{subj.avg_mastery}% Mastery</span>

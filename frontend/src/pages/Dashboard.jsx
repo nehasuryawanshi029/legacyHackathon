@@ -50,7 +50,7 @@ export default function Dashboard() {
       {/* TODAY'S MISSION & READINESS SCORE */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* TODAY'S MISSION CARD (2 cols) */}
-        <div className="lg:col-span-2 rounded-2xl bg-slate-900/80 border border-teal-500/20 p-6 shadow-xl relative flex flex-col justify-between">
+        <div className="lg:col-span-2 rounded-2xl bg-slate-900/80 border border-teal-500/20 p-6 shadow-xl relative flex flex-col justify-between hover-card-trigger">
           <div>
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2 text-cyan-400 font-semibold text-xs uppercase tracking-wider">
@@ -123,7 +123,7 @@ export default function Dashboard() {
         </div>
 
         {/* ATLANTIS READINESS SCORE CARD (1 col) */}
-        <div className="rounded-2xl bg-slate-900/80 border border-teal-500/20 p-6 shadow-xl space-y-4 flex flex-col justify-between">
+        <div className="rounded-2xl bg-slate-900/80 border border-teal-500/20 p-6 shadow-xl space-y-4 flex flex-col justify-between hover-card-trigger">
           <div>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-cyan-400 font-semibold text-xs uppercase tracking-wider">
@@ -176,7 +176,7 @@ export default function Dashboard() {
       {/* TIDE-CHART STUDY PLAN & INSIGHTS */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* TIDE-CHART (2 cols) */}
-        <div className="lg:col-span-2 rounded-2xl bg-slate-900/80 border border-teal-500/20 p-6 shadow-xl space-y-4">
+        <div className="lg:col-span-2 rounded-2xl bg-slate-900/80 border border-teal-500/20 p-6 shadow-xl space-y-4 hover-card-trigger">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Compass className="h-5 w-5 text-cyan-400" />
@@ -238,7 +238,7 @@ export default function Dashboard() {
         </div>
 
         {/* ATLANTIS INSIGHTS FEED (1 col) */}
-        <div className="rounded-2xl bg-slate-900/80 border border-teal-500/20 p-6 shadow-xl space-y-4">
+        <div className="rounded-2xl bg-slate-900/80 border border-teal-500/20 p-6 shadow-xl space-y-4 hover-card-trigger">
           <div className="flex items-center gap-2 text-cyan-400 font-semibold text-xs uppercase tracking-wider">
             <Sparkles className="h-4 w-4" />
             <span>Atlantis Intelligence Insights</span>
@@ -267,7 +267,7 @@ export default function Dashboard() {
 
       {/* ACADEMICS TO CAREER BRIDGE SECTION */}
       {academicsBridge.length > 0 && (
-        <div className="rounded-2xl bg-slate-900/80 border border-teal-500/20 p-6 shadow-xl space-y-4">
+        <div className="rounded-2xl bg-slate-900/80 border border-teal-500/20 p-6 shadow-xl space-y-4 hover-card-trigger">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Layers className="h-5 w-5 text-cyan-400" />
@@ -280,7 +280,7 @@ export default function Dashboard() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {academicsBridge.map((item, idx) => (
-              <div key={idx} className="p-4 rounded-xl bg-slate-950/80 border border-cyan-500/30 space-y-2">
+              <div key={idx} className="p-4 rounded-xl bg-slate-950/80 border border-cyan-500/30 space-y-2 hover-card-trigger">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-slate-300">{item.academic_subject}</span>
                   <span className="text-[10px] font-mono text-cyan-400 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-500/30">
